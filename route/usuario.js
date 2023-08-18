@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const db = require('../db/conn');
 
-app.post('/api/Horario',(req, res)=>{
+app.post('/api/usuario',(req, res)=>{
 
 
     let params =[
@@ -34,7 +34,7 @@ app.post('/api/Horario',(req, res)=>{
 
 });
 
-app.get('/api/Horario',(req, res)=>{
+app.get('/api/usuario',(req, res)=>{
  
   let sql = "select * from horario";
 
@@ -48,7 +48,7 @@ app.get('/api/Horario',(req, res)=>{
         });
 
 });
-app.put('/api/Horario/:id', (req, res) => {
+app.put('/api/usuario/:id', (req, res) => {
 
 
   const parametros = [
@@ -81,7 +81,7 @@ app.put('/api/Horario/:id', (req, res) => {
 
 
 });
-app.delete('/api/Horario/:id', (req, res) => {
+app.delete('/api/usuario/:id', (req, res) => {
 
 
   let sql = ` update horario 
