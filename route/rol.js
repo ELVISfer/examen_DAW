@@ -6,16 +6,14 @@ app.post('',(req, res)=>{
 
 
     let params =[
-    req.body.id_rol,
-      req.body.nombre,
-      req.body.activo
+      req.body.nombre
 
     ];
 
     let sql = `insert into tblrol 
-                (id_rol, nombre, activo) 
+                (nombre) 
                 values 
-                ($1, $2, $3)
+                ($1)
                 returning id ` ;
 
     console.log(params);    
@@ -23,7 +21,7 @@ app.post('',(req, res)=>{
     db.one(sql,params, event => event.id)
     .then( data => {
 
-      const objetocreado = {id : data, nombre: params[0], activo: params[1] };
+      const objetocreado = {id : data, nombre: params[0]};
 
       res.json(objetocreado);
     })
@@ -36,7 +34,7 @@ app.post('',(req, res)=>{
 
 app.get('',(req, res)=>{
  
-  let sql = "select * from tblrol";
+  let sql = "select * from tbl_rol";
 
 
     db.any(sql, e => e.id)
@@ -48,20 +46,17 @@ app.get('',(req, res)=>{
         });
 
 });
-app.put('/:id', (req, res) => {
+app.put('', (req, res) => {
 
 
   const parametros = [
     req.params.id,
     req.body.nombre,
     req.body.activo
-
-    
   ];
 
-  let sql = ` update tblrol 
-               set  nombre =  $2, 
-                  activo = $3,
+  let sql = ` update tbl_rol 
+               set  nombre =  $2,
                   where id= $1`
                   ;
 
@@ -70,7 +65,7 @@ app.put('/:id', (req, res) => {
 
           const objetoMo = {  id : req.params.id, 
           nombre:  req.body.nombre,
-           activo: req.body.activo };
+     };
           
           res.json(objetoMo);
 
@@ -85,16 +80,15 @@ app.put('/:id', (req, res) => {
 app.delete('/:id', (req, res) => {
 
 
-  let sql = ` update tblrol 
+  let sql = ` update tbl_rol 
   set  nombre =  $2, 
-     activo = $3,
      where id= $1`;
 
   db.result(sql, [req.params.id] ,   r => r.rowCount)
       .then(data => {
 
           
-          const objetoBorrado     = {  id : req.params.id, nombre :req.params.nombr,
+          const objetoBorrado     = {  id : req.params.id, nombre :req.params.nombre,
                                       activo : false
                                   };
           
