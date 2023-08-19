@@ -33,7 +33,7 @@ app.post('/api/continente ',(req, res)=>{
 
 });
 
-app.get('/api/continente',(req, res)=>{
+app.get('',(req, res)=>{
  
   let sql = "select * from tbl_continente";
 
@@ -47,7 +47,7 @@ app.get('/api/continente',(req, res)=>{
         });
 
 });
-app.put('/api/continente/:id', (req, res) => {
+app.put('/:id', (req, res) => {
 
 
   const parametros = [
@@ -77,7 +77,7 @@ app.put('/api/continente/:id', (req, res) => {
 
 
 });
-app.delete('/api/continente/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
 
 
   let sql = ` update tbl_continente 

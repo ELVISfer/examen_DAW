@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const db = require('../db/conn');
 
-app.post('/api/direccion ',(req, res)=>{
+app.post(' ',(req, res)=>{
 
 
     let params =[
@@ -39,7 +39,7 @@ app.post('/api/direccion ',(req, res)=>{
 
 });
 
-app.get('/api/direccion',(req, res)=>{
+app.get('',(req, res)=>{
  
   let sql = "select * from tbl_direcciones";
 
@@ -53,7 +53,7 @@ app.get('/api/direccion',(req, res)=>{
         });
 
 });
-app.put('/api/direccion/:id', (req, res) => {
+app.put('/:id', (req, res) => {
 
 
   const parametros = [
@@ -94,7 +94,7 @@ app.put('/api/direccion/:id', (req, res) => {
 
 
 });
-app.delete('/api/direccion/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
 
 
   let sql =  ` update tbl_direcciones 

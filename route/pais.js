@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const db = require('../db/conn');
 
-app.post('/api/pais ',(req, res)=>{
+app.post('',(req, res)=>{
 
 
     let params =[
@@ -34,7 +34,7 @@ app.post('/api/pais ',(req, res)=>{
 
 });
 
-app.get('/api/pais',(req, res)=>{
+app.get('',(req, res)=>{
  
   let sql = "select * tbl_pais";
 
@@ -48,7 +48,7 @@ app.get('/api/pais',(req, res)=>{
         });
 
 });
-app.put('/api/pais/:id', (req, res) => {
+app.put('/:id', (req, res) => {
 
 
   const parametros = [
@@ -78,7 +78,7 @@ app.put('/api/pais/:id', (req, res) => {
 
 
 });
-app.delete('/api/pais/:id', (req, res) => {
+app.delete('/:id', (req, res) => {
 
 
   let sql = ` update tbl_pais

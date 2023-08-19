@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const db = require('../db/conn');
 
-app.post('/api/rol ',(req, res)=>{
+app.post('',(req, res)=>{
 
 
     let params =[
@@ -34,7 +34,7 @@ app.post('/api/rol ',(req, res)=>{
 
 });
 
-app.get('/api/rol',(req, res)=>{
+app.get('',(req, res)=>{
  
   let sql = "select * from tblrol";
 
@@ -48,7 +48,7 @@ app.get('/api/rol',(req, res)=>{
         });
 
 });
-app.put('/api/rol/:id', (req, res) => {
+app.put('/:id', (req, res) => {
 
 
   const parametros = [
@@ -81,7 +81,8 @@ app.put('/api/rol/:id', (req, res) => {
 
 
 });
-app.delete('/api/rol/:id', (req, res) => {
+
+app.delete('/:id', (req, res) => {
 
 
   let sql = ` update tblrol 
