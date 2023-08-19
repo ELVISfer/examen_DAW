@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 const db = require('../db/conn');
 
-app.post('/api/continente ',(req, res)=>{
+app.post('',(req, res)=>{
 
 
     let params =[
